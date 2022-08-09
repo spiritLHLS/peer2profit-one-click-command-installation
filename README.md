@@ -42,7 +42,7 @@ After the registration link is registered, remember your registered email addres
 curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh -m youremail
 ```
 
-At the end of this command, modify it to your mail and run it with one click
+At the end of this command, modify it to your email and run it with one click
 
 ## Uninstall
 
