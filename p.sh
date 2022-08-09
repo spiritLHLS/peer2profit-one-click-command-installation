@@ -48,7 +48,7 @@ check_virt(){
   ARCHITECTURE=$(uname -m)
   case "$ARCHITECTURE" in
     aarch64 ) ARCH=arm64v8;;
-    x64|x86_64|amd64 ) ARCH=latest;;
+    x64|x86_64 ) ARCH=latest;;
     * ) red " ERROR: Unsupported architecture: $ARCHITECTURE\n" && exit 1;;
   esac
 }
@@ -112,6 +112,11 @@ check_operating_system
 check_ipv4
 check_virt
 input_token
+ARCHH=$(uname -m)
+case "$ARCHH" in
+x86_64 ) ARCHITECTUREH="amd64";;
+* ) ARCHITECTUREH="i386";;
+esac
 if [ $SYSTEM = "CentOS" ]; then
     yum update
     yum install -y wget
@@ -127,7 +132,7 @@ else
     apt-get install curl -y
     apt-get install wget -y
     sudo dpkg -P p2pclient
-    if [ $ARCHITECTURE = "amd64" ]; then
+    if [ $ARCHITECTUREH = "amd64" ]; then
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_amd64.deb
         dpkg -i p2pclient_0.60_amd64.deb
