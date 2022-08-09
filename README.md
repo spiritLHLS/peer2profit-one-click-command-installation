@@ -1,4 +1,4 @@
-# traffmonetizer-one-click-command-installation
+# peer2profit-one-click-command-installation
 
 ## Language
 
@@ -8,9 +8,7 @@
 
 The peer2profit is an option that allows users to earn money by sharing your traffic.
 
-You'll receive $0.30 for the 1G traffic you share, and this script supports data center network or home bandwidth.
-
-This is the **first one-click installation script of the whole network** to automatically install dependencies and pull and install the latest docker, and the script will continue to be improved according to the platform update.
+You will get $0.30 for 1G of traffic you share, and this script supports data center network or home bandwidth (twice the benefit).
 
 It has below features:
 
@@ -32,30 +30,30 @@ It has below features:
 ### Interactive installation
 
 ```shell
-
+curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh
 ```
 
-After the registration link is registered, copy the token in the upper left corner, run my script, paste the token, and press Enter to start the installation.
+After the registration link is registered, remember your registered email address, run this command, paste the registered email address, and press Enter to start the installation.
 
 ### One command installation
 
 ```shell
-
+curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh -m youremail
 ```
 
-Change to your token at the end of this command
+At the end of this command, modify it to your mail and run it with one click
 
 ## Uninstall
 
 ```shell
-
+bash p.sh -u
 ```
 
 uninstall service
 
 ## Experience
 
-
+The income is relatively low, mainly depends on the type of IP. If it is home bandwidth, the income will be the highest, and if it is the data center, the income will be the lowest.
 
 ## Disclaimer
 
