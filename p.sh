@@ -117,7 +117,7 @@ if [ $SYSTEM = "CentOS" ]; then
     yum install -y wget
     rm -rf *p2pclient*
     rpm -e p2pclient
-    wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient-0.61-1.el8.x86_64.rpm
+    wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient-0.61-1.el8.x86_64.rpm
     rpm -ivh p2pclient-0.61-1.el8.x86_64.rpm
     nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
     rm -rf p2pclient-0.61-1.el8.x86_64.rp
@@ -129,13 +129,13 @@ else
     sudo dpkg -P p2pclient
     if [ $ARCHITECTURE = "amd64" ]; then
         rm -rf *p2p*
-        wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient_0.60_amd64.deb
+        wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_amd64.deb
         dpkg -i p2pclient_0.60_amd64.deb
         nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_amd64.deb*
     else
         rm -rf *p2p*
-        wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient_0.60_i386.deb
+        wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_i386.deb
         dpkg -i p2pclient_0.60_i386.deb
         nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_i386.deb*
@@ -143,7 +143,7 @@ else
     if [ $? -ne 0 ]; then
         container_build
     else
-        echo "succeed"
+        echo ""
     fi
 fi
 result
