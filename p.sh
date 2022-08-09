@@ -19,23 +19,28 @@ done
 
 [[ -z $SYSTEM ]] && exit 1
 
-sudo kill -9 $(pidof p2pclient)
-
 ARCH=$(uname -m)
 case "$ARCH" in
 x86_64 ) ARCHITECTURE="amd64";;
 * ) ARCHITECTURE="i386";;
 esac
 
+# 传参
+while getopts "UuM:m:" OPTNAME; do
+  case "$OPTNAME" in
+    'U'|'u' ) uninstall;;
+    'M'|'m' ) P2PEMAIL=$OPTARG;;
+  esac
+done
+
+# 输入 p2pclient 的个人 信息
+input_token(){
+  [ -z $P2PEMAIL ] && reading " Enter your Email, if you do not find it, open https://p2pr.me/164225539661e2d42426a2f: " P2PEMAIL
+}
+
 SPP=$(./etc/os-release && echo "$VERSION_ID")
 
-# try to read preconfigured email from .env file
-if [ -f ".env" ]; then
-    EMAIL=`cat .env | xargs`
-fi
-# get email from stdin
-read -p "Enter your email(Just like nameofyouremail@gmail.com, write to your email): " EMAIL 
-eval "echo $EMAIL > .env"
+sudo kill -9 $(pidof p2pclient)
 
 if [ $SYSTEM = "CentOS" ]; then
     yum update
@@ -44,37 +49,36 @@ if [ $SYSTEM = "CentOS" ]; then
     rpm -e p2pclient
     wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient-0.61-1.el8.x86_64.rpm
     rpm -ivh p2pclient-0.61-1.el8.x86_64.rpm
-    nohup p2pclient -l "$EMAIL" >/dev/null 2>&1 &
+    nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
     rm -rf p2pclient-0.61-1.el8.x86_64.rp
 else
     apt-get update
     apt-get install sudo -y
     apt-get install curl -y
     apt-get install wget -y
-    apt-get install apt-transport-https ca-certificates gnupg lsb-release -y
-    curl -fsSL https://download.docker.com/linux/debian/gpg -y | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg -y
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    apt-get install docker-ce docker-ce-cli containerd.io -y
     sudo dpkg -P p2pclient
     if [ $ARCHITECTURE = "amd64" ]; then
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient_0.60_amd64.deb
         dpkg -i p2pclient_0.60_amd64.deb
-        nohup p2pclient -l "$EMAIL" >/dev/null 2>&1 &
+        nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_amd64.deb*
     else
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/Hang-up-items/raw/main/p2pclient_0.60_i386.deb
         dpkg -i p2pclient_0.60_i386.deb
-        nohup p2pclient -l "$EMAIL" >/dev/null 2>&1 &
+        nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_i386.deb*
     fi
     if [ $? -ne 0 ]; then
-        curl -fsSL bit.ly/peer2fly |bash -s -- --email "$EMAIL" --number 1
+        ! systemctl is-active docker >/dev/null 2>&1 && green " \n Install docker \n " && curl -sSL get.docker.com | sh
+        systemctl is-enabled docker | grep -qv enabled && systemctl enable --now docker
+        docker rm -f peer2profit || true && docker run -d --restart always -e P2P_EMAIL="$P2PEMAIL" --name peer2profit peer2profit/peer2profit_linux:latest 
     else
         echo "succeed"
     fi
 fi
+
 rm -rf p.sh
 rm -- "$0"
 
