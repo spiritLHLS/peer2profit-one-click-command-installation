@@ -18,14 +18,14 @@ traffmonetizer 是一个允许用户通过分享流量来赚钱的平台。(被�
 ### 信息
 
 - 本项目已经在 AMD64 和 ARM 上验证上测试通过
-- 感兴趣可以尝试一下，[注册链接点我](https://traffmonetizer.com/?aff=247346), 走我链接注册你获得5刀的注册奖励。
+- 感兴趣可以尝试一下，[注册链接点我](https://traffmonetizer.com/?aff=247346), 走我链接注册你不会损失什么，但我更有动力维护脚本。
 
 ## 安装
 
 ### 交互式安装
 
 ```shell
-
+curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh
 ```
 
 注册链接注册后，复制左上角的token，运行此命令，粘贴token，回车，即可开始安装。
