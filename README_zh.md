@@ -1,4 +1,4 @@
-# traffmonetizer-一键式命令安装
+# peer2profit-一键式命令安装
 
 ## 介绍
 
@@ -37,9 +37,7 @@ curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-comma
 curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh -m 你的邮箱
 ```
 
-在此命令最好修改为你的邮箱再一键运行即可
-
-在此命令的最后更改为你的token
+在此命令最后修改为你的邮箱再一键运行即可
 
 ## 卸载
 
@@ -51,11 +49,11 @@ bash p.sh -u
 
 ### 经验
 
-写死了，单IP不能多开，多开封号
+主要看IP是属于何种类型，如果是家庭带宽将收益最高，如果是数据中心将收益最低。
 
 收益比较低，一个IP一个月大概就0.1~0.0.25刀，个人实验38天0.21刀
 
-国外服务器可挂，国内服务器挂了收益较低，但挂住宅网收益还是可观的，我上面实验的是服务器的收益。
+国外服务器可挂，国内服务器挂了收益较低，但挂住宅网(家庭带宽)收益还是可观的，我上面实验的是服务器的收益。
 
 ### 免责声明
 
