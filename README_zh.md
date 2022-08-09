@@ -3,9 +3,7 @@
 ## 介绍
 traffmonetizer 是一个允许用户通过分享流量来赚钱的平台。(被动收入)
 
-您共享的 1G 流量将获得 0.10 美元，并且此脚本支持数据中心网络或家庭带宽。
-
-这是**全网第一个**自动安装依赖并拉取安装最新docker的**一键安装脚本**，脚本会根据平台更新不断完善。
+您共享的 1G 流量将获得 0.30 美元，并且此脚本支持数据中心网络或家庭带宽。
 
 它具有以下特点：
 
@@ -27,7 +25,7 @@ traffmonetizer 是一个允许用户通过分享流量来赚钱的平台。(被�
 ### 交互式安装
 
 ```shell
-curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/tm.sh -o tm.sh && chmod +x tm.sh && bash ./tm.sh
+
 ```
 
 注册链接注册后，复制左上角的token，运行此命令，粘贴token，回车，即可开始安装。
@@ -35,7 +33,7 @@ curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-co
 ### 一键安装
 
 ```shell
-curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/tm.sh -o tm.sh && chmod +x tm.sh && bash ./tm.sh -t ViRrn6FZQsfgmE9pjmyAPsEM7UD6epqMb4zcJ3WtQYk=
+
 ```
 
 在此命令的最后更改为你的token
@@ -43,22 +41,14 @@ curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-co
 ## 卸载
 
 ```shell
-bash tm.sh -u
+
 ```
 
 卸载服务
 
 ### 经验
 
-单IP挂国外，欧洲区日入0.010~0.015美元，美区估计会多点，单IP每日0.013以上不超过0.016吧。
 
-**僧多粥少，人越多，收益越低**
-
-![](https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/backup/a.png)
-
-![](https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/backup/b.png)
-
-2022.05 末尾就大幅度减少收益了，之前一天有0.025美元以上的。(本脚本在平台适配了linux的第15天创建)
 
 ### 免责声明
 
