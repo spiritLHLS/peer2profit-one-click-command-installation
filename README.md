@@ -23,7 +23,8 @@ It has below features:
 ## Notes
 
 - Verified on AMD64 and ARM
-- Try it if you are interested via my --> [referrals](https://p2pr.me/164225539661e2d42426a2f) <--, 
+- Try it if you are interested via my --> [referrals](https://p2pr.me/164225539661e2d42426a2f) <--.
+- Follow my link to sign up and you won't lose anything, but I'm more motivated to maintain the script.
 
 ## Install
 
