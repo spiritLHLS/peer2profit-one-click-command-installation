@@ -1,9 +1,10 @@
 # traffmonetizer-一键式命令安装
 
 ## 介绍
-traffmonetizer 是一个允许用户通过分享流量来赚钱的平台。(被动收入)
 
-您共享的 1G 流量将获得 0.30 美元，并且此脚本支持数据中心网络或家庭带宽。
+peer2profit 是一个允许用户通过分享流量来赚钱的平台。(被动收入)
+
+您共享的 1G 流量将获得 0.30 美元，并且此脚本支持数据中心网络或家庭带宽(两倍收益)。
 
 它具有以下特点：
 
@@ -18,37 +19,43 @@ traffmonetizer 是一个允许用户通过分享流量来赚钱的平台。(被�
 ### 信息
 
 - 本项目已经在 AMD64 和 ARM 上验证上测试通过
-- 感兴趣可以尝试一下，[注册链接点我](https://traffmonetizer.com/?aff=247346), 走我链接注册你不会损失什么，但我更有动力维护脚本。
+- 感兴趣可以尝试一下，[注册链接点我](https://p2pr.me/164225539661e2d42426a2f), 走我链接注册你不会损失什么，但我更有动力维护脚本。
 
 ## 安装
 
 ### 交互式安装
 
 ```shell
-curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh
+curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh
 ```
 
-注册链接注册后，复制左上角的token，运行此命令，粘贴token，回车，即可开始安装。
+注册链接注册后，记住你的注册邮箱，运行此命令，粘贴注册邮箱，回车，即可开始安装。
 
 ### 一键安装
 
 ```shell
-
+curl -L https://raw.githubusercontent.com/spiritLHLS/peer2profit-one-click-command-installation/main/p.sh -o p.sh && chmod +x p.sh && bash p.sh -m 你的邮箱
 ```
+
+在此命令最好修改为你的邮箱再一键运行即可
 
 在此命令的最后更改为你的token
 
 ## 卸载
 
 ```shell
-
+bash p.sh -u
 ```
 
 卸载服务
 
 ### 经验
 
+写死了，单IP不能多开，多开封号
 
+收益比较低，一个IP一个月大概就0.1~0.0.25刀，个人实验38天0.21刀
+
+国外服务器可挂，国内服务器挂了收益较低，但挂住宅网收益还是可观的，我上面实验的是服务器的收益。
 
 ### 免责声明
 
