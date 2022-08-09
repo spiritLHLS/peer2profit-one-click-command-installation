@@ -6,9 +6,9 @@
 
 ## **Introduction**
 
-The traffmonetizer is an option that allows users to earn money by sharing your traffic.
+The peer2profit is an option that allows users to earn money by sharing your traffic.
 
-You'll receive $0.10 for the 1G traffic you share, and this script supports data center network or home bandwidth.
+You'll receive $0.30 for the 1G traffic you share, and this script supports data center network or home bandwidth.
 
 This is the **first one-click installation script of the whole network** to automatically install dependencies and pull and install the latest docker, and the script will continue to be improved according to the platform update.
 
@@ -25,14 +25,14 @@ It has below features:
 ## Notes
 
 - Verified on AMD64 and ARM
-- Try it if you are interested via my --> [referrals](https://traffmonetizer.com/?aff=247346) <--, you will get 5 dollar.
+- Try it if you are interested via my --> [referrals](https://p2pr.me/164225539661e2d42426a2f) <--, 
 
 ## Install
 
 ### Interactive installation
 
 ```shell
-curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/tm.sh -o tm.sh && chmod +x tm.sh && bash ./tm.sh
+
 ```
 
 After the registration link is registered, copy the token in the upper left corner, run my script, paste the token, and press Enter to start the installation.
@@ -40,7 +40,7 @@ After the registration link is registered, copy the token in the upper left corn
 ### One command installation
 
 ```shell
-curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/tm.sh -o tm.sh && chmod +x tm.sh && bash ./tm.sh -t ViRrn6FZQsfgmE9pjmyAPsEM7UD6epqMb4zcJ3WtQYk=
+
 ```
 
 Change to your token at the end of this command
@@ -48,20 +48,14 @@ Change to your token at the end of this command
 ## Uninstall
 
 ```shell
-bash tm.sh -u
+
 ```
 
 uninstall service
 
 ## Experience
 
-For a single IP, the daily income in Europe is 0.010~0.015 US dollars. It is estimated that there will be more in the United States. The daily income of a single IP is more than 0.013 and not more than 0.016.
 
-**More monks and less porridge, the more people, the lower the income**
-
-![](https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/backup/a.png)
-
-![](https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/backup/b.png)
 
 ## Disclaimer
 
