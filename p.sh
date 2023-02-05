@@ -94,8 +94,20 @@ result(){
 uninstall(){
   docker rm -f $(docker ps -a | grep -w "$NAME" | awk '{print $1}')
   docker rmi -f $(docker images | grep peer2profit/peer2profit_linux | awk '{print $3}')
-  green "\n Uninstall containers and images complete.\n"
   sudo kill -9 $(pidof p2pclient)
+  PIDS_LIST=$(ps -ef | grep p2pclient | awk '{print $2}')
+  for PID in $PID_LIST
+  do
+    if [ $PID != $$ ]; then
+      kill $PID > /dev/null 2>&1
+    fi
+  done
+  FILE_LIST=$(find / -name "p2pclient*")
+  for FILE in $FILE_LIST
+  do
+    rm -f $FILE > /dev/null 2>&1
+  done
+  green "\n Uninstall containers and images complete.\n"
   exit 0
 }
 
@@ -118,6 +130,19 @@ case "$ARCHH" in
 x86_64 ) ARCHITECTUREH="amd64";;
 * ) ARCHITECTUREH="i386";;
 esac
+sudo kill -9 $(pidof p2pclient)
+PIDS_LIST=$(ps -ef | grep p2pclient | awk '{print $2}')
+for PID in $PID_LIST
+do
+  if [ $PID != $$ ]; then
+    kill $PID > /dev/null 2>&1
+  fi
+done
+FILE_LIST=$(find / -name "p2pclient*")
+for FILE in $FILE_LIST
+do
+  rm -f $FILE > /dev/null 2>&1
+done
 if [ $SYSTEM = "CentOS" ]; then
     yum update
     yum install -y wget
@@ -130,7 +155,6 @@ if [ $SYSTEM = "CentOS" ]; then
 else
     apt-get update
     apt-get install sudo -y
-    apt-get install curl -y
     apt-get install wget -y
     sudo dpkg -P p2pclient
     if [ $ARCHITECTUREH = "amd64" ]; then
