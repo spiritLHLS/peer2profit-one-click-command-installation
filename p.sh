@@ -41,7 +41,7 @@ check_operating_system(){
 
 # 判断宿主机的 IPv4 或双栈情况,没有拉取不了 docker
 check_ipv4(){
-  ! curl -s4m8 ip.sb | grep -q '\.' && red " ERROR：The host must have IPv4. " && exit 1
+  ! curl -s4m8 ifconfig.co | grep -q '\.' && red " ERROR：The host must have IPv4. " && exit 1
 }
 
 # 判断 CPU 架构
