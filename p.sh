@@ -42,7 +42,6 @@ check_operating_system(){
 # 判断宿主机的 IPv4 或双栈情况,没有拉取不了 docker
 check_ipv4(){
   # 遍历本机可以使用的 IP API 服务商
-  # 定义可能的 IP API 服务商
   API_NET=("ip.sb" "ipget.net" "ip.ping0.cc" "https://ip4.seeip.org" "https://api.my-ip.io/ip" "https://ipv4.icanhazip.com" "api.ipify.org" "ifconfig.co")
 
   # 遍历每个 API 服务商，并检查它是否可用
@@ -58,7 +57,7 @@ check_ipv4(){
     fi
   done
 
-  # 判断宿主机的 IPv4 、IPv6 和双栈情况,检测前先检查是否有非 WARP 的 IPv4
+  # 判断宿主机的 IPv4 、IPv6 和双栈情况
   ! curl -s4m8 $IP_API | grep -q '\.' && red " ERROR：The host must have IPv4. " && exit 1
 }
 
