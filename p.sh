@@ -179,7 +179,7 @@ else
     apt-get install sudo -y
     apt-get install wget -y
     sudo dpkg -P p2pclient
-    if [ $ARCHITECTURE = "latest" ]; then
+    if [ $ARCH = "latest" ]; then
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_amd64.deb
         dpkg -i p2pclient_0.60_amd64.deb
