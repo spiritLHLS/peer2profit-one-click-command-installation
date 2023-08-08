@@ -152,11 +152,6 @@ check_operating_system
 check_ipv4
 check_virt
 input_token
-ARCHH=$(uname -m)
-case "$ARCHH" in
-x86_64 ) ARCHITECTUREH="amd64";;
-* ) ARCHITECTUREH="i386";;
-esac
 sudo kill -9 $(pidof p2pclient)
 PIDS_LIST=$(ps -ef | grep p2pclient | awk '{print $2}')
 for PID in $PID_LIST
@@ -184,7 +179,7 @@ else
     apt-get install sudo -y
     apt-get install wget -y
     sudo dpkg -P p2pclient
-    if [ $ARCHITECTUREH = "amd64" ]; then
+    if [ $ARCHITECTURE = "latest" ]; then
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_amd64.deb
         dpkg -i p2pclient_0.60_amd64.deb
