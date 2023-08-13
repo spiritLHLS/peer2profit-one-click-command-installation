@@ -75,7 +75,7 @@ check_ipv4(){
 check_virt(){
   ARCHITECTURE=$(uname -m)
   case "$ARCHITECTURE" in
-    aarch64 ) ARCH=arm64v8;;
+    i386 ) ARCH=i386;;
     x64|x86_64 ) ARCH=latest;;
     * ) red " ERROR: Unsupported architecture: $ARCHITECTURE\n" && exit 1;;
   esac
@@ -195,10 +195,10 @@ else
         nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_i386.deb*
     fi
-    if [ $? -ne 0 ]; then
-        container_build
-    else
-        echo ""
-    fi
+    # if [ $? -ne 0 ]; then
+    #     container_build
+    # else
+    #     echo ""
+    # fi
 fi
 result
