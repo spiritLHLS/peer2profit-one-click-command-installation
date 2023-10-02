@@ -184,14 +184,14 @@ else
         # wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_amd64.deb
         wget https://updates.peer2profit.app/peer2profit_0.48_amd64.deb
         # dpkg -i p2pclient_0.60_amd64.deb
-        dpkg -i peer2profit_0.48_amd64.deb
+        apt install -f ./peer2profit_0.48_amd64.deb
         nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         # rm -rf p2pclient_0.60_amd64.deb*
         rm -rf peer2profit_0.48_amd64.deb*
     else
         rm -rf *p2p*
         wget https://github.com/spiritLHLS/peer2profit-one-click-command-installation/raw/main/p2pclient_0.60_i386.deb
-        dpkg -i p2pclient_0.60_i386.deb
+        apt install -f ./p2pclient_0.60_i386.deb
         nohup p2pclient -l "$P2PEMAIL" >/dev/null 2>&1 &
         rm -rf p2pclient_0.60_i386.deb*
     fi
